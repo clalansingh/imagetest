@@ -1,0 +1,18 @@
+= form_for @entry do |form|
+
+  .row
+    = form.label :title
+    = form.text_field :title
+    
+  .row
+    = form.label :content
+    = form.text_area :content
+    
+  .row
+    = form.submit 'Save'
+    
+  .jqmWindow#dialog
+  
+#dialog-form{:title => "Create new entry", :style => "display:none"}
+
+  

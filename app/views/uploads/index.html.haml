@@ -1,0 +1,10 @@
+#create-form
+  - form_for @upload, :html => { :multipart => true }, :remote => true do |f|
+    = f.label 'Image'
+    = f.file_field :file
+    = f.submit
+  %br
+  - @uploads.each do |upload|
+    - url = upload.file.url(:small)
+    = link_to image_tag(upload.file.url(:thumb)), 'javascript:window.parent.pushImage("'+url+'")', :id => "test", :class => "wym_insert"
+    
